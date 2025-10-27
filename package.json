@@ -1,0 +1,32 @@
+{
+  "name": "@uocdev/npmmeta",
+  "version": "1.0.0",
+  "description": "CLI and Library to fetch npm packages metadata",
+  "type": "module",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "bin": {
+    "npmmeta": "./dist/bin/cli.js"
+  },
+  "scripts": {
+    "dev": "tsx bin/cli.ts",
+    "build": "tsc",
+    "start": "node dist/bin/cli.js",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UocDev/npmmeta.git"
+  },
+  "author": "UocDev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UocDev/npmmeta/issues"
+  },
+  "homepage": "https://github.com/UocDev/npmmeta#readme",
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.16.0"
+  }
+}
