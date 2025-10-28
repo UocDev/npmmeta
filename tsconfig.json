@@ -1,17 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES2020",
-    "moduleResolution": "node16",
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "Node16",
     "rootDir": "./",
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "declaration": true,
-    "declarationMap": true
+    "resolveJsonModule": true
   },
-  "include": ["src", "bin", "tests"]
+  "include": ["src", "bin", "tests"],
+  "exclude": ["dist", "node_modules"]
 }
