@@ -2,7 +2,7 @@ name: Test Package
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master, developer ]
   pull_request:
 
 jobs:
