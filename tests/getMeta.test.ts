@@ -20,7 +20,7 @@ vi.mock("../src/fetcher", () => {
   };
 });
 
-import { getMeta } from "../src/index";
+import { getMeta } from "../src/index.js";
 
 describe("getMeta", () => {
   it("parses metadata correctly", async () => {
