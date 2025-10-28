@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "CLI and library to fetch npm package metadata easily.",
   "type": "module",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "bin": {
-    "npmmeta": "dist/bin/cli.js"
+    "npmmeta": "./dist/bin/cli.js"
   },
   "files": [
     "dist"
@@ -15,15 +15,23 @@
     "type": "git",
     "url": "git+https://github.com/UocDev/npmmeta.git"
   },
+  "bugs": {
+    "url": "https://github.com/UocDev/npmmeta/issues"
+  },
   "homepage": "https://github.com/UocDev/npmmeta#readme",
   "keywords": [
     "npm",
     "metadata",
     "cli",
     "package",
-    "uocdev"
+    "uocdev",
+    "npm-registry",
+    "typescript"
   ],
-  "author": "UocDev",
+  "author": {
+    "name": "UocDev",
+    "url": "https://github.com/UocDev"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=18"
@@ -34,15 +42,17 @@
     "test:ci": "vitest --run",
     "start": "node dist/bin/cli.js",
     "prepare": "npm run build",
+    "version": "npm run build && git add -A dist",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
-    "typescript": "^5.5.0",
-    "vitest": "^1.0.0",
-    "@types/node": "^18.0.0"
+    "typescript": "^5.5.4",
+    "vitest": "^1.6.1",
+    "@types/node": "^22.5.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
