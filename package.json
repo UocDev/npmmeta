@@ -1,32 +1,48 @@
 {
   "name": "@uocdev/npmmeta",
   "version": "1.0.0",
-  "description": "CLI and Library to fetch npm packages metadata",
+  "description": "CLI and library to fetch npm package metadata easily.",
   "type": "module",
-  "main": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "bin": {
-    "npmmeta": "./dist/bin/cli.js"
+    "npmmeta": "dist/bin/cli.js"
   },
-  "scripts": {
-    "dev": "tsx bin/cli.ts",
-    "build": "tsc",
-    "start": "node dist/bin/cli.js",
-    "clean": "rm -rf dist"
-  },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UocDev/npmmeta.git"
   },
+  "homepage": "https://github.com/UocDev/npmmeta#readme",
+  "keywords": [
+    "npm",
+    "metadata",
+    "cli",
+    "package",
+    "uocdev"
+  ],
   "author": "UocDev",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/UocDev/npmmeta/issues"
+  "engines": {
+    "node": ">=18"
   },
-  "homepage": "https://github.com/UocDev/npmmeta#readme",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest",
+    "test:ci": "vitest --run",
+    "start": "node dist/bin/cli.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {},
   "devDependencies": {
     "typescript": "^5.5.0",
-    "@types/node": "^22.0.0",
-    "tsx": "^4.16.0"
+    "vitest": "^1.0.0",
+    "@types/node": "^18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
