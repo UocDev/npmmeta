@@ -48,7 +48,7 @@
   "dependencies": {},
   "devDependencies": {
     "typescript": "^5.5.4",
-    "vitest": "^1.6.1",
+    "vitest": "^4.0.4",
     "@types/node": "^22.5.0"
   },
   "publishConfig": {
