@@ -2,6 +2,29 @@
 // bin/cli.ts
 import process from "node:process";
 import { getMeta } from "../src/index.js";
+import { checkUpdate } from "../src/checkUpdate.js";
+
+const args = process.argv.slice(2);
+
+if (args[0] === "check") {
+  const pkg = args[1];
+  if (!pkg) {
+    console.error("Usage: npmmeta check <package>");
+    process.exit(1);
+  }
+
+  const currentArgIndex = args.findIndex(a => a === "--current");
+  const currentVersion = currentArgIndex !== -1 ? args[currentArgIndex + 1] : undefined;
+
+  const result = await checkUpdate(pkg, currentVersion);
+  console.log(
+    `Package: ${result.name}\nCurrent: ${result.current || "(unknown)"}\nLatest: ${result.latest}\nStatus: ${
+      result.status === "up-to-date" ? "Up to date" : result.status === "outdated" ? "utdated" : "Unknown"
+    }`
+  );
+  process.exit(0);
+}
+
 
 const [, , pkg] = process.argv;
 
